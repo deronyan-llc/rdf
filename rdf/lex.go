@@ -689,9 +689,11 @@ outer:
 			if quoteCount == 3 {
 				// Triple-quoted strings can contain quotes, as long as not 3 in a row.
 				if l.next() != quote {
+					l.backup()
 					break
 				}
 				if l.next() != quote {
+					l.backup()
 					break
 				}
 			}

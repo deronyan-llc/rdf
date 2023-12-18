@@ -1746,6 +1746,19 @@ p:a·̀ͯ‿.⁀ <http://a.example/p> <http://a.example/o> .`, "", []Triple{
 		},
 	}},
 
+	// Test multi-line literals which have a quote as the last character on a line.
+	{`<http://a.example/s> <http://a.example/p> """
+x""y"
+""" .`, "", []Triple{
+		Triple{
+			Subj: IRI{str: "http://a.example/s"},
+			Pred: IRI{str: "http://a.example/p"},
+			Obj: Literal{str: `
+x""y"
+`, DataType: xsdString},
+		},
+	}},
+
 	//<#literal_with_CHARACTER_TABULATION> rdf:type rdft:TestTurtleEval ;
 	//   mf:name      "literal_with_CHARACTER_TABULATION" ;
 	//   rdfs:comment "literal with CHARACTER TABULATION" ;
@@ -1758,7 +1771,7 @@ p:a·̀ͯ‿.⁀ <http://a.example/p> <http://a.example/o> .`, "", []Triple{
 		Triple{
 			Subj: IRI{str: "http://a.example/s"},
 			Pred: IRI{str: "http://a.example/p"},
-			Obj: Literal{str: `	`, DataType: xsdString},
+			Obj:  Literal{str: `	`, DataType: xsdString},
 		},
 	}},
 
@@ -1774,7 +1787,7 @@ p:a·̀ͯ‿.⁀ <http://a.example/p> <http://a.example/o> .`, "", []Triple{
 		Triple{
 			Subj: IRI{str: "http://a.example/s"},
 			Pred: IRI{str: "http://a.example/p"},
-			Obj: Literal{str: "", DataType: xsdString},
+			Obj:  Literal{str: "", DataType: xsdString},
 		},
 	}},
 
