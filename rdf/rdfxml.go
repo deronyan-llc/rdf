@@ -64,9 +64,9 @@ type evalCtx struct {
 // rdfXMLDecoder decodes Triples from an XML stream.
 //
 // Deviations from the RDF/XML specification at http://www.w3.org/TR/rdf-syntax-grammar/ :
-// - A valid RDF/XML document cannot have to elements with the same ID, but this
-//   decoder only emits valid triples as soon as they are available in a stream, and then
-//   it's up to the consumer to decide what to do with duplicates.
+//   - A valid RDF/XML document cannot have to elements with the same ID, but this
+//     decoder only emits valid triples as soon as they are available in a stream, and then
+//     it's up to the consumer to decide what to do with duplicates.
 type rdfXMLDecoder struct {
 	dec *xml.Decoder
 
@@ -412,7 +412,7 @@ first:
 				panic(fmt.Errorf("parseXMLCharDataOrElemNode first: TODO rdf:!Decsription"))
 			}
 		} else {
-			panic(fmt.Errorf("parseXMLCharDataOrElemNode first: TODO not rdf name space"))
+			fmt.Printf("parseXMLCharDataOrElemNode first: TODO not rdf name space: `%s`\n", elem.Name.Space)
 		}
 
 	case xml.EndElement:
