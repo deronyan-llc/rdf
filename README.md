@@ -11,4 +11,4 @@ This package introduces data structures for representing RDF resources, and incl
 ## This fork
 The source of this fork, https://github.com/knakk/rdf, is outdated, and not maintained. This fork allows us to provide fixes and updates as needed.
 
-For complete documentation see [godoc](http://godoc.org/github.com/alan-deronyan/rdf).
+For complete documentation see [godoc](http://godoc.org/github.com/deronyan-llc/rdf).
